@@ -26,11 +26,11 @@ export const App = () => {
 
   // DON'T change the code below
   const increase = () => {
-    addOne();
+    setCount(counter => {
+      const next = counter + 1;
 
-    if (count % 5 === 0) {
-      add100();
-    }
+      return (next - 1) % 5 === 0 ? next + 100 : next;
+    });
   };
 
   return (
